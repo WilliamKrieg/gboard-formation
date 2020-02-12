@@ -1,0 +1,13 @@
+<div class="task-sidebar" *ngIf="task && task != null">
+  <p class="task-title">Edition d'une tâche</p>
+  <mat-form-field class="fw" appearance="outline">
+    <mat-label>Titre du ticket *</mat-label>
+    <input [(ngModel)]="task.title" matInput placeholder="Saisie votre le nom du ticket">
+  </mat-form-field>
+  <mat-form-field class="fw" appearance="outline">
+    <mat-label>Description du ticket :</mat-label>
+    <textarea [(ngModel)]="task.content"rows="12" matInput placeholder="Saisie la description de votre demande"></textarea>
+  </mat-form-field>
+
+  <button mat-stroked-button color="primary" (click)="updateTask()">Update Task</button>
+</div>

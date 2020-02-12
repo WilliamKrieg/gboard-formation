@@ -1,0 +1,14 @@
+
+
+<div class="column" *ngIf="column != null">
+  <div class="column-header" (click)="editColumn(column)">
+    <span class="name">{{column.name}}</span>
+  </div>
+  <perfect-scrollbar class="task-list ngx-dnd-container" >
+    <div class="dropZone" ngxDroppable="dropZone" (drop)="updateTaskColumn($event)">
+    <app-task  class="ngx-dnd-item task" *ngFor="let task of column.tasks" [task]="task" ngxDraggable [model]="task"></app-task>
+    </div>
+  </perfect-scrollbar>
+</div>
+
+

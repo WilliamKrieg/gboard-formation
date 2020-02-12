@@ -1,0 +1,41 @@
+<mat-grid-list cols="1" rowHeight="2:1">
+  <mat-grid-tile>
+    <mat-card>
+      <mat-card-title>Connexion</mat-card-title>
+      <mat-card-subtitle>Bienvenu sur ce sublime espace de connexion.</mat-card-subtitle>
+      <hr>
+      <mat-card-content>
+        <form [formGroup]="formGroup">
+
+         <mat-form-field class="fw" appearance="outline">
+            <mat-label>Nom d'utilisateur *</mat-label>
+            <input formControlName="mail" autocomplete="username"  matInput placeholder="Saisie votre nom d'utilisateur">
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+            <mat-error *ngIf="formGroup.controls.mail">
+              <span *ngIf="formGroup.controls.mail.hasError('required')">Email is <strong>required</strong></span>
+              <span *ngIf="formGroup.controls.mail.hasError('email')"> Email format <strong>invalid</strong></span>
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="fw" appearance="outline">
+            <mat-label>Mot de passe *</mat-label>
+            <input formControlName="password"  autocomplete="new-password" type="password" matInput placeholder="Saisie votre nom mot de passe">
+            <mat-icon matSuffix>lock</mat-icon>
+            <mat-error *ngIf="formGroup.controls.password">
+              <span *ngIf="formGroup.controls.password.hasError('required')">This field is <strong>required</strong></span>
+              <span *ngIf="formGroup.controls.password.hasError('minlength')"> Min length :  <strong>
+                {{formGroup.controls.password.errors.minlength.actualLength + '/'+ formGroup.controls.password.errors.minlength.requiredLength}}
+              </strong></span>
+            </mat-error>
+          </mat-form-field>
+
+        </form>
+      </mat-card-content>
+      <mat-card-actions>
+        <button style="" [disabled]="formGroup.status === 'INVALID'" (click)="login()" mat-raised-button color="primary">Se connecter</button>
+      </mat-card-actions>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>
+
+

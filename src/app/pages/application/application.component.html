@@ -1,0 +1,38 @@
+<mat-sidenav-container class="app-container" (backdropClick)="sidenav.close" >
+  <mat-sidenav mode="over" position="end" #sidenav (keydown.escape)="sidenav.close">
+
+    <app-task-sidebar></app-task-sidebar>
+
+
+  </mat-sidenav>
+  <mat-sidenav-content>
+
+
+    <app-header></app-header>
+
+    <router-outlet></router-outlet>
+
+    <app-footer></app-footer>
+
+
+
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

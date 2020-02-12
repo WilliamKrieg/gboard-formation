@@ -1,0 +1,13 @@
+<div class="header">
+  <div class="container">
+    <div class="flex-container">
+      <div class="site-name " routerLink="/app">
+        <span class="ml12" >
+          SOPRA - FORMATION
+        </span>
+      </div>
+
+      <div class="options"> Bonjour, <span>{{_userService.user.username}}</span>  | <button mat-button (click)="_userService.logout()">Déconnexion</button></div>
+    </div>
+  </div>
+</div>
